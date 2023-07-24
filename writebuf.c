@@ -1,13 +1,13 @@
 #include "main.h"
 /**
- * _putchar - writes the string c to stdout
+ * writebuf - writes the string c to stdout
  * @c: The string to print
 * @nbyte: number of bytes to be written
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _putchar(char *c, unsigned int nbyte)
+int writebuf(char *c, unsigned int nbyte)
 {
 	return (write(1, c, nbyte));
 }
