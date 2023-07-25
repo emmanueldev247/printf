@@ -1,24 +1,24 @@
 #include "main.h"
-
 /**
  * _printf - function that produces output according to a format
- * @format: the character string
+ * @format: the string to be printed
  *
  * Return: the length of the charcters in the output string
  */
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0, len = 0, findex = 0;
+	unsigned int i, len = 0, findex = 0;
 	char *foutput;
-	int (*func_output)(va_list, char *, unsigned int);
 	va_list args;
+
+	i = 0;
 
 	va_start(args, format), foutput = malloc(sizeof(char) * BUFFER_SIZE);
 	if (!foutput || !format || (format[0] == '%' && !format[1]))
 		return (-1);
-	if (!format[0])
+	if (format[i] == '\0')
 		return (0);
-	for (i = 0; format && format[i]; i++)
+	for (i = 0; format[i] && format; i++)
 	{
 		if (format[i] == '%')
 		{
