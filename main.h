@@ -31,9 +31,6 @@ unsigned int manage_output(char *str, char ch, unsigned int findex);
 int printchr(va_list args, char *string, unsigned int findex);
 int printstr(va_list args, char *string, unsigned int findex);
 
-/*
-int printchr(va_list args, char *string, unsigned int findex);
-int printstr(va_list args, char *fout, unsigned int findex);
-*/
+int printint(va_list arguments, char *buf, unsigned int ibuf);
 
 #endif
