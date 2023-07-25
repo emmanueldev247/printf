@@ -10,6 +10,7 @@ int (*which_func(const char *str, int indx))(va_list, char *, unsigned int)
 {
 	print_func format_array[] = {
 		{"c", printchr}, {"s", printstr},
+		{"d", printint}, {"i", printint},
 		{NULL, NULL},
 	};
 	int i, j, arr_index;
@@ -47,6 +48,7 @@ int amount_print(const char *str, int indx)
 {
 	print_func format_array[] = {
 		{"c", printchr}, {"s", printstr},
+		{"d", printint}, {"i", printint},
 		{NULL, NULL},
 	};
 	int i, j, arr_index;
