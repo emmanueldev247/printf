@@ -33,6 +33,6 @@ int printstr(va_list args, char *string, unsigned int findex);
 
 int printint(va_list arguments, char *buf, unsigned int ibuf);
 /*
-*/
+
 
 #endif
