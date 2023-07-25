@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * manage_output - concatenates the buffer chars
  * @str: string pointer
