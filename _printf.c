@@ -7,17 +7,36 @@
  */
 int _printf(const char *format, ...)
 {
-	unsigned int i, len = 0, findex = 0;
+	unsigned int i, len = 0;
 	char *foutput;
 	va_list args;
 
 	i = 0;
 
-	va_start(args, format), foutput = malloc(sizeof(char) * BUFFER_SIZE);
+	va_start(args, format);
+	foutput = malloc(sizeof(char) * BUFFER_SIZE);
 	if (!foutput || !format || (format[0] == '%' && !format[1]))
 		return (-1);
 	if (format[i] == '\0')
 		return (0);
+
+	len = process_format(format, foutput, args);
+	return (len);
+}
+
+/**
+ * process_format - Helper function to process the format string
+ * @format: the string to be printed
+ * @foutput: the output buffer
+ * @args: the argument list
+ *
+ * Return: the length of the characters in the output string
+ */
+int process_format(const char *format, char *foutput, va_list args)
+{
+	unsigned int i, len = 0, findex = 0;
+	int (*func_output)(va_list, char *, unsigned int);
+
 	for (i = 0; format[i] && format; i++)
 	{
 		if (format[i] == '%')
@@ -48,6 +67,8 @@ int _printf(const char *format, ...)
 		for (findex = len; findex > BUFFER_SIZE; findex -= BUFFER_SIZE)
 			;
 	}
-	writebuf(foutput, findex), free(foutput), va_end(args);
+	writebuf(foutput, findex);
+	free(foutput);
+	va_end(args);
 	return (len);
 }

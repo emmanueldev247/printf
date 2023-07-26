@@ -23,6 +23,7 @@ typedef struct function_struct
 
 
 int _printf(const char *format, ...);
+int process_format(const char *format, char *foutput, va_list args);
 int writebuf(char *string, unsigned int nbyte);
 int (*func_output)(va_list, char *, unsigned int);
 int (*which_func(const char *str, int indx))(va_list, char *, unsigned int);
@@ -30,7 +31,11 @@ int amount_print(const char *str, int indx);
 unsigned int manage_output(char *str, char ch, unsigned int findex);
 int printchr(va_list args, char *string, unsigned int findex);
 int printstr(va_list args, char *string, unsigned int findex);
-
 int printint(va_list arguments, char *buf, unsigned int ibuf);
+char *fill_bin_arr(char *binary, long int integer_input, int isneg, int limit);
+int printint(va_list arguments, char *buf, unsigned int ibuf);
+int printbnr(va_list args, char *value, unsigned int findex);
+int printunint(va_list arguments, char *buf, unsigned int ibuf);
+
 
 #endif

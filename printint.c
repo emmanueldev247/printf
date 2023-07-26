@@ -2,22 +2,23 @@
 
 /**
  * printint - prints an integer
- * @arguments: input string
- * @buf: buffer pointer (Not used in this implementation)
- * @ibuf: index for buffer pointer (Not used in this implementation)
- * Return: number of chars printed.
+ * @args: input string
+ * @buf: buffer pointer(Not used in this implementation)
+ * @findex: index for buffer pointer (Not used in this implementation)
+ *
+ * Return: number of characters printed.
  */
-int printint(va_list arguments, char *buf, unsigned int ibuf)
+int printint(va_list args, char *buf, unsigned int findex)
 {
 	int int_input, int_temp, i, div, isneg;
 	unsigned int int_in;
 
-	int_input = va_arg(arguments, int);
+	int_input = va_arg(args, int);
 	isneg = (int_input < 0);
 	int_in = (isneg) ? -int_input : int_input;
 
 	if (isneg)
-		ibuf = manage_output(buf, '-', ibuf);
+		findex = manage_output(buf, '-', findex);
 
 	int_temp = int_in;
 	div = 1;
@@ -30,7 +31,7 @@ int printint(va_list arguments, char *buf, unsigned int ibuf)
 
 	for (i = 0; div > 0; div /= 10, i++)
 	{
-		ibuf = manage_output(buf, ((int_in / div) % 10) + '0', ibuf);
+		findex = manage_output(buf, ((int_in / div) % 10) + '0', findex);
 	}
 	return (i + isneg);
 }
