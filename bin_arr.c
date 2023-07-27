@@ -6,6 +6,7 @@
  * @integer_input: input number
  * @isneg: if input number is negative
  * @limit: size of the binary
+ *
  * Return: number of chars printed.
  */
 char *fill_bin_arr(char *binary, long int integer_input, int isneg, int limit)
