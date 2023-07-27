@@ -16,6 +16,7 @@ int (*which_func(const char *str, int indx))(va_list, char *, unsigned int)
 		{" %", printprc}, {"u", print_unint},
 		{"o", printoct}, {" u", print_unint},
 		{"#u", print_unint},{"+u", print_unint},
+		{"+o", printoct}, {" o", printoct},
 		{NULL, NULL},
 	};
 	/**/
