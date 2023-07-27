@@ -19,7 +19,6 @@ int (*which_func(const char *str, int indx))(va_list, char *, unsigned int)
 		{"+o", printoct}, {" o", printoct},
 		{NULL, NULL},
 	};
-	/**/
 
 	int i, j, arr_index;
 
@@ -57,9 +56,12 @@ int amount_print(const char *str, int indx)
 	print_func format_array[] = {
 		{"c", printchr}, {"s", printstr},
 		{"d", printint}, {"i", printint},
+		{"#d", printint}, {"#i", printint},
 		{"b", printbnr}, {"%", printprc},
 		{" %", printprc}, {"u", print_unint},
-		{"o", printoct}, {"u", print_unint},
+		{"o", printoct}, {" u", print_unint},
+		{"#u", print_unint},{"+u", print_unint},
+		{"+o", printoct}, {" o", printoct},
 		{NULL, NULL},
 	};
 	int i, j, arr_index;
