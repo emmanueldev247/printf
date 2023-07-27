@@ -36,6 +36,10 @@ char *fill_bin_arr(char *binary, long int integer_input, int isneg, int limit);
 int printint(va_list arguments, char *buf, unsigned int ibuf);
 int printbnr(va_list args, char *value, unsigned int findex);
 int printunint(va_list arguments, char *buf, unsigned int ibuf);
+int printprc(va_list a,  char *str, unsigned int findex);
+int print_unint(va_list args, char *num, unsigned int findex);
+int printoct(va_list args, char *buf, unsigned int findex);
+char *fill_oct_arr(char *bin, char *oct);
 
 
 #endif
