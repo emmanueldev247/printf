@@ -40,6 +40,12 @@ int printprc(va_list a,  char *str, unsigned int findex);
 int print_unint(va_list args, char *num, unsigned int findex);
 int printoct(va_list args, char *buf, unsigned int findex);
 char *fill_oct_arr(char *bin, char *oct);
-
+int printhex(va_list args, char *buf, unsigned int findex);
+char *fill_hex_arr(char *bin, char *hex, int isupp, int size);
+int print_reverse(va_list args, char *buf, unsigned int findex);
+int printhex_upper(va_list args, char *buf, unsigned int findex);
+int printrot(va_list args, char *string, unsigned int findex);
+int printSTR(va_list args, char *string, unsigned int findex);
+int printaddr(va_list args, char *string, unsigned int findex);
 
 #endif
