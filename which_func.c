@@ -13,10 +13,14 @@ int (*which_func(const char *str, int indx))(va_list, char *, unsigned int)
 		{"d", printint}, {"i", printint},
 		{"b", printbnr}, {"%", printprc},
 		{" %", printprc}, {"u", print_unint},
-		{"o", printoct}, {"u", print_unint},
-		{NULL, NULL},
+		{"o", printoct}, {" u", print_unint},
+		{"x", printhex}, {"+x", printhex},
+		{"l", printprc}, {"h", printprc},
+		{"X", printhex_upper}, {"+u", print_unint},
+		{"R", printrot}, {"r", print_reverse},
+		{"S", printSTR}, {"#u", print_unint},
+		{"p", printaddr}, {NULL, NULL},
 	};
-	/**/
 
 	int i, j, arr_index;
 
@@ -56,9 +60,15 @@ int amount_print(const char *str, int indx)
 		{"d", printint}, {"i", printint},
 		{"b", printbnr}, {"%", printprc},
 		{" %", printprc}, {"u", print_unint},
-		{"o", printoct}, {"u", print_unint},
-		{NULL, NULL},
+		{"o", printoct}, {" u", print_unint},
+		{"x", printhex}, {"+x", printhex},
+		{"l", printprc}, {"h", printprc},
+		{"X", printhex_upper}, {"+u", print_unint},
+		{"R", printrot}, {"r", print_reverse},
+		{"S", printSTR}, {"#u", print_unint},
+		{"p", printaddr}, {NULL, NULL},
 	};
+
 	int i, j, arr_index;
 
 	i = 0, j = 0;
