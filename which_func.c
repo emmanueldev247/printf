@@ -11,16 +11,23 @@ int (*which_func(const char *str, int indx))(va_list, char *, unsigned int)
 	print_func format_array[] = {
 		{"c", printchr}, {"s", printstr},
 		{"d", printint}, {"i", printint},
-		{"#d", printint}, {"#i", printint},
+		{"+d", printintplus}, {"+i", printintplus},
+		{" +d", printintplus}, {" +i", printintplus},
+		{"+ d", printintplus}, {"+ i", printintplus},
+		{"ld", printlongint}, {"li", printlongint},
+		{"hd", printint}, {"hi", printint},
 		{"b", printbnr}, {"%", printprc},
 		{" %", printprc}, {"u", print_unint},
 		{"o", printoct}, {" u", print_unint},
+		{"lo", printlongoct}, {"lu", printlunint},
+		{"ho", printlongoct}, {"hu", printlunint},
 		{"x", printhex}, {"+x", printhex},
+		{"lx", printlhex}, {"lX", printlhex_upper},
+		{"hx", printlhex}, {"hX", printlhex_upper},
 		{"l", printprc}, {"h", printprc},
 		{"X", printhex_upper}, {"+u", print_unint},
 		{"R", printrot}, {"r", print_reverse},
 		{"S", printSTR}, {"#u", print_unint},
-    {"+o", printoct}, {" o", printoct},
 		{"p", printaddr}, {NULL, NULL},
 	};
 
@@ -58,21 +65,23 @@ int (*which_func(const char *str, int indx))(va_list, char *, unsigned int)
 int amount_print(const char *str, int indx)
 {
 	print_func format_array[] = {
-		{"c", printchr}, {"s", printstr},
-		{"d", printint}, {"i", printint},
-		{"#d", printint}, {"#i", printint},
-		{"b", printbnr}, {"%", printprc},
+		{"c", printchr}, {"s", printstr}, {"d", printint}, {"i", printint},
+		{"+d", printintplus}, {"+i", printintplus},
+		{" +d", printintplus}, {" +i", printintplus},
+		{"+ d", printintplus}, {"+ i", printintplus},
+		{"ld", printlongint}, {"li", printlongint},
+		{"hd", printint}, {"hi", printint},	{"b", printbnr}, {"%", printprc},
 		{" %", printprc}, {"u", print_unint},
 		{"o", printoct}, {" u", print_unint},
+		{"lo", printlongoct}, {"lu", printlunint},
+		{"ho", printlongoct}, {"hu", printlunint},
 		{"x", printhex}, {"+x", printhex},
-		{"l", printprc}, {"h", printprc},
-		{"X", printhex_upper}, {"+u", print_unint},
-		{"R", printrot}, {"r", print_reverse},
-		{"S", printSTR}, {"#u", print_unint},
-    {"+o", printoct}, {" o", printoct},
+		{"lx", printlhex}, {"lX", printlhex_upper},
+		{"hx", printlhex}, {"hX", printlhex_upper},
+		{"l", printprc}, {"h", printprc}, {"X", printhex_upper}, {"+u", print_unint},
+		{"R", printrot}, {"r", print_reverse}, {"S", printSTR}, {"#u", print_unint},
 		{"p", printaddr}, {NULL, NULL},
 	};
-
 	int i, j, arr_index;
 
 	i = 0, j = 0;

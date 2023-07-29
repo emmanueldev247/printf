@@ -47,5 +47,12 @@ int printhex_upper(va_list args, char *buf, unsigned int findex);
 int printrot(va_list args, char *string, unsigned int findex);
 int printSTR(va_list args, char *string, unsigned int findex);
 int printaddr(va_list args, char *string, unsigned int findex);
+int printintplus(va_list args, char *string, unsigned int findex);
+int printlongint(va_list args, char *string, unsigned int findex);
+int printlongoct(va_list args, char *string, unsigned int findex);
+int printlunint(va_list args, char *string, unsigned int findex);
+char *fill_long_oct_arr(char *bin, char *oct);
+int printlhex(va_list args, char *string, unsigned int findex);
+int printlhex_upper(va_list args, char *string, unsigned int findex);
 
 #endif
