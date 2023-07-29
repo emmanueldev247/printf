@@ -18,4 +18,5 @@ Where **format** contains the string that is printed.
 
 ...
 
-*This README will be updated as soon as we can*
+*This README will be updated as we progress*
+will update during break #0
